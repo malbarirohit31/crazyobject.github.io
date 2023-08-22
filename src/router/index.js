@@ -9,8 +9,8 @@ const routes = [
     component: ViewNotes
   },
   {
-    path: '/search',
-    name: 'search',
+    path: '/weather',
+    name: 'weather',
     component: ViewStats
   }
 ]

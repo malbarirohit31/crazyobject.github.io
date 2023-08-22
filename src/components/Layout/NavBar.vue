@@ -39,11 +39,11 @@
             Notes
           </RouterLink>
           <RouterLink
-            to="/search"
+            to="/weather"
             class="navbar-item"
             active-class="is-active"
           >
-            Search
+            Weather
           </RouterLink>
         </div>
       </div>

@@ -3,13 +3,19 @@ import Notes from "./Notes.vue"
 import useNotesStore from "../stores/notes.store.js"
 const notesStore = useNotesStore();
 notesStore.loadNotesFromLocal();
+
+const vAutoFocus = {
+  mounted:(element)=>{
+    element.focus();
+  }
+}
 </script>
 <template>
   <div class="notes">
     <div class="card has-background-success-dark p-4 mb-5">
       <div class="field">
         <div class="control">
-          <textarea
+          <textarea v-AutoFocus
             class="textarea"
             placeholder="Add a new note"
             v-model="notesStore.newNote"
