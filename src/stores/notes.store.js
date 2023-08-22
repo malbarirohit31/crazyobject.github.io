@@ -11,6 +11,11 @@ const useNotesStore = defineStore("Notes",{
             editId:ref(0),
         }
     },
+    getters:{
+        getTotalNotes(){
+            return this.notes.length
+        }
+    },
     actions:{
         loadNotesFromLocal(){
             // get notes from cache if not return empty array

@@ -22,7 +22,6 @@ const vAutoFocus = {
           />
         </div>
       </div>
-
       <div class="field is-grouped is-grouped-right">
         <div class="control">
           <button  v-show="!notesStore.isEdit" @click="notesStore.addNote" :disabled=!notesStore.newNote class="button is-link has-background-success">
@@ -37,6 +36,7 @@ const vAutoFocus = {
         </div>
       </div>
     </div>
+    <div class="has-text-right"><p class="help is-success">Total Notes - {{ notesStore.getTotalNotes }}</p></div>
     <Notes/>
   </div>
 </template>
