@@ -46,7 +46,7 @@ todoObj.getTodoList();  // for loadtime
                     <option value="9">9</option>
                 </select>
                 <div>
-                    <a href="javascript:void();" @click="todoObj.currentPage--;todoObj.getTodoList()">Prev</a> | <a href="javascript:void();" @click="todoObj.currentPage++;todoObj.getTodoList()"
+                    <a href="javascript:void();" @click="todoObj.prev">Prev</a> | <a href="javascript:void();" @click="todoObj.next"
                     >Next</a>
                 </div>
             </div>       

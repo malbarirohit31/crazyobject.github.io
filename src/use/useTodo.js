@@ -7,7 +7,19 @@ function useTodo() {
     recordsPerPage: ref("3"),
     currentPage: ref("1"),
     filteredTodoList:ref([]),
-    todoList: ref([{id:1,text:"1"},{id:2,text:"2"},{id:3,text:"3"},{id:4,text:"4"},{id:5,text:"5"},{id:6,text:"6"},{id:7,text:"7"},{id:8,text:"8"}]),
+    todoList: ref([]),
+    next:function(){
+        if(this.currentPage<Math.ceil(this.todoList.length/this.recordsPerPage)){
+            this.currentPage++;
+            this.getTodoList();
+        }
+    },
+    prev:function(){
+        if(this.currentPage>=2){        
+            this.currentPage--;
+            this.getTodoList();
+        }
+    },
     getTodoList:function(){        
         const perPage = this.recordsPerPage;
         let count = 1;
@@ -25,6 +37,7 @@ function useTodo() {
         text: this.newTodoText,
       });
       this.newTodoText = "";
+      this.getTodoList();
     },
   });
 
