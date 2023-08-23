@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import ViewNotes from '@/views/ViewNotes.vue'
-import ViewStats from '@/views/ViewStats.vue'
+import ViewNotes from '../views/ViewNotes.vue'
+import ViewWeather from '../views/ViewWeather.vue'
+import BlogApi from '../views/ViewBlog.vue'
+import ToDoList from "../views/ViewTodo.vue"
 
 const routes = [
   {
@@ -11,7 +13,17 @@ const routes = [
   {
     path: '/weather',
     name: 'weather',
-    component: ViewStats
+    component: ViewWeather
+  },
+  {
+    path: '/api',
+    name: 'API',
+    component: BlogApi
+  },
+  {
+    path: '/todo',
+    name: 'TODO',
+    component: ToDoList
   }
 ]
 

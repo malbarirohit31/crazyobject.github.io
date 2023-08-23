@@ -1,9 +1,15 @@
 <script setup>
 import Notes from "./Notes.vue"
 import useNotesStore from "../stores/notes.store.js"
-const notesStore = useNotesStore();
-notesStore.loadNotesFromLocal();
+import {watch} from "vue"
+import {storeToRefs} from "pinia"
 
+const notesStore = useNotesStore();
+const {newNote} = storeToRefs(notesStore)
+
+watch(newNote,(newVal,oldVal)=>{
+  console.log(newVal, oldVal)
+})
 const vAutoFocus = {
   mounted:(element)=>{
     element.focus();

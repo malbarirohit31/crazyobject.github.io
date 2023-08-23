@@ -45,6 +45,20 @@
           >
             Weather
           </RouterLink>
+          <RouterLink
+            to="/api"
+            class="navbar-item"
+            active-class="is-active"
+          >
+            Blog API
+          </RouterLink>
+          <RouterLink
+            to="/todo"
+            class="navbar-item"
+            active-class="is-active"
+          >
+            Todo List
+          </RouterLink>
         </div>
       </div>
     </div>
