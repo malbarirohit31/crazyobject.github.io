@@ -5,6 +5,7 @@ import ToDo from "./ToDo.vue"
 const showAddTaskForm =  ref(false)
 
 const {todoObj} = useTodo();
+todoObj.updatePageMeta();
 todoObj.getTodoList();  // for loadtime
 </script>
 <template>
@@ -40,7 +41,7 @@ todoObj.getTodoList();  // for loadtime
         </div>
         <div v-show="todoObj.todoList.length>0" class="todoList">
             <div class="pagination">
-                <select name="noOfPages" @change="todoObj.getTodoList()" v-model="todoObj.recordsPerPage">
+                <select name="noOfPages" @change="todoObj.changePageSize()" v-model="todoObj.recordsPerPage">
                     <option value="3">3</option>
                     <option value="6">6</option>
                     <option value="9">9</option>
