@@ -9,7 +9,7 @@ defineProps({
 <template>
     <div class="todo notification is-primary">
         <div>#{{todo.id}} : {{ todo.text }}</div>
-        <div>Edit / Delete</div>
+        <div>{{todo.date}}</div>
     </div>
 </template>
 <style scoped>

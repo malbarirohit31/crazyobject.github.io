@@ -2,7 +2,6 @@ import { watch, ref, reactive } from "vue";
 
 function useTodo() {
   const todoObj = reactive({
-    title: "todo title",
     newTodoText: ref(""),
     recordsPerPage: ref("3"),
     currentPage: ref("1"),
@@ -48,6 +47,7 @@ function useTodo() {
         this.todoList.push({
         id: this.todoList.length===0 ? 1 : this.todoList[this.todoList.length-1].id+1 ,
         text: this.newTodoText,
+        date: new Date().toLocaleString()
       });
       this.newTodoText = "";
       this.getTodoList();

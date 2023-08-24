@@ -3,6 +3,7 @@ import Notes from "./Notes.vue"
 import useNotesStore from "../stores/notes.store.js"
 import {watch} from "vue"
 import {storeToRefs} from "pinia"
+import vAutoFocus from "../directives/common.directives.js"
 
 const notesStore = useNotesStore();
 const {newNote} = storeToRefs(notesStore)
@@ -10,11 +11,6 @@ const {newNote} = storeToRefs(notesStore)
 watch(newNote,(newVal,oldVal)=>{
   console.log(newVal, oldVal)
 })
-const vAutoFocus = {
-  mounted:(element)=>{
-    element.focus();
-  }
-}
 </script>
 <template>
   <div class="notes">

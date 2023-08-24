@@ -1,8 +1,7 @@
 <script setup>
-import {ref} from "vue"
 import useTodo from "../use/useTodo.js"
 import ToDo from "./ToDo.vue"
-const showAddTaskForm =  ref(false)
+import vAutoFocus from "../directives/common.directives.js"
 
 const {todoObj} = useTodo();
 todoObj.updatePageMeta();
@@ -10,32 +9,16 @@ todoObj.getTodoList();  // for loadtime
 </script>
 <template>
     <div class="mainContainer">
-        <div class="field is-grouped is-grouped-right">
-        <div class="control">
-            <button @click="showAddTaskForm=true" class="button is-link has-background-success">
-                Add Task
-            </button>
-        </div>
-      </div>
-        <div v-show="showAddTaskForm" class="card has-background-success-dark p-4 mb-5">
+        <div  class="card has-background-success-dark p-4 mb-5">
             <div class="field">
                 <div class="control">
-                <input
-                    name="taskText"
-                    class="input"
-                    placeholder="new task"
-                    v-model="todoObj.newTodoText"
-                />
-                </div>
-            </div>
-            <div class="field is-grouped is-grouped-right">
-                <div class="control">
-                    <button @click="todoObj.addTodo" class="button is-link has-background-success">
-                        Save
-                    </button> &nbsp;
-                    <button  @click="showAddTaskForm=false" class="button is-link has-background-success">
-                        Cancel
-                    </button>
+                    <input v-AutoFocus
+                        name="taskText"
+                        class="input"
+                        placeholder="Add new task and hit enter"
+                        v-model="todoObj.newTodoText"
+                        @keydown.enter="todoObj.addTodo"
+                    />
                 </div>
             </div>
         </div>
